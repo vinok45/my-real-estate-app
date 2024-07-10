@@ -7,6 +7,7 @@ import Modal from './components/Modal';
 import ErrorBoundary from './components/ErrorBoundary';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
+import Pagination from './components/Pagination';
 
 const PropertyList = lazy(() => import('./components/PropertyList'));
 const SearchBar = lazy(() => import('./components/SearchBar'));
