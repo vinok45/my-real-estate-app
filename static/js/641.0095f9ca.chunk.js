@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreal_estate_app=self.webpackChunkreal_estate_app||[]).push([[641],{641:(e,t,a)=>{a.r(t),a.d(t,{default:()=>l});a(43);var n=a(216),s=a(579);const l=function(e){let{children:t,token:a}=e;return a?t:(0,s.jsx)(n.C5,{to:"/login"})}}}]);
-//# sourceMappingURL=641.0095f9ca.chunk.js.map

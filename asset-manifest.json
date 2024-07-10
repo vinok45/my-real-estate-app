@@ -1,35 +1,15 @@
 {
   "files": {
     "main.css": "/my-real-estate-app/static/css/main.169c12fc.css",
-    "main.js": "/my-real-estate-app/static/js/main.bb45136b.js",
-    "static/js/192.b4e0bf07.chunk.js": "/my-real-estate-app/static/js/192.b4e0bf07.chunk.js",
-    "static/js/684.f4ce847f.chunk.js": "/my-real-estate-app/static/js/684.f4ce847f.chunk.js",
-    "static/js/613.02dd9128.chunk.js": "/my-real-estate-app/static/js/613.02dd9128.chunk.js",
-    "static/js/519.16673bcc.chunk.js": "/my-real-estate-app/static/js/519.16673bcc.chunk.js",
-    "static/js/484.697d72ec.chunk.js": "/my-real-estate-app/static/js/484.697d72ec.chunk.js",
-    "static/js/584.a9b7f610.chunk.js": "/my-real-estate-app/static/js/584.a9b7f610.chunk.js",
-    "static/js/372.05519f32.chunk.js": "/my-real-estate-app/static/js/372.05519f32.chunk.js",
-    "static/js/93.6974ef34.chunk.js": "/my-real-estate-app/static/js/93.6974ef34.chunk.js",
-    "static/js/641.0095f9ca.chunk.js": "/my-real-estate-app/static/js/641.0095f9ca.chunk.js",
+    "main.js": "/my-real-estate-app/static/js/main.d16198b9.js",
     "static/js/453.30f244fe.chunk.js": "/my-real-estate-app/static/js/453.30f244fe.chunk.js",
-    "static/js/212.ba90dc7e.chunk.js": "/my-real-estate-app/static/js/212.ba90dc7e.chunk.js",
     "index.html": "/my-real-estate-app/index.html",
     "main.169c12fc.css.map": "/my-real-estate-app/static/css/main.169c12fc.css.map",
-    "main.bb45136b.js.map": "/my-real-estate-app/static/js/main.bb45136b.js.map",
-    "192.b4e0bf07.chunk.js.map": "/my-real-estate-app/static/js/192.b4e0bf07.chunk.js.map",
-    "684.f4ce847f.chunk.js.map": "/my-real-estate-app/static/js/684.f4ce847f.chunk.js.map",
-    "613.02dd9128.chunk.js.map": "/my-real-estate-app/static/js/613.02dd9128.chunk.js.map",
-    "519.16673bcc.chunk.js.map": "/my-real-estate-app/static/js/519.16673bcc.chunk.js.map",
-    "484.697d72ec.chunk.js.map": "/my-real-estate-app/static/js/484.697d72ec.chunk.js.map",
-    "584.a9b7f610.chunk.js.map": "/my-real-estate-app/static/js/584.a9b7f610.chunk.js.map",
-    "372.05519f32.chunk.js.map": "/my-real-estate-app/static/js/372.05519f32.chunk.js.map",
-    "93.6974ef34.chunk.js.map": "/my-real-estate-app/static/js/93.6974ef34.chunk.js.map",
-    "641.0095f9ca.chunk.js.map": "/my-real-estate-app/static/js/641.0095f9ca.chunk.js.map",
-    "453.30f244fe.chunk.js.map": "/my-real-estate-app/static/js/453.30f244fe.chunk.js.map",
-    "212.ba90dc7e.chunk.js.map": "/my-real-estate-app/static/js/212.ba90dc7e.chunk.js.map"
+    "main.d16198b9.js.map": "/my-real-estate-app/static/js/main.d16198b9.js.map",
+    "453.30f244fe.chunk.js.map": "/my-real-estate-app/static/js/453.30f244fe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.169c12fc.css",
-    "static/js/main.bb45136b.js"
+    "static/js/main.d16198b9.js"
   ]
 }
