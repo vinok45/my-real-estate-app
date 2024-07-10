@@ -1,48 +1,40 @@
 // src/components/Login.js
 import React, { useState } from 'react';
+import { auth } from '../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
 function Login({ setToken, setNotification }) {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!username || !password) {
+    if (!email || !password) {
       setError('Veuillez remplir tous les champs');
       return;
     }
     try {
-      const response = await fetch('/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
-      });
-      const data = await response.json();
-      if (response.ok) {
-        setToken(data.token);
-        localStorage.setItem('token', data.token);
-        setNotification({ message: 'Connexion réussie', type: 'success' });
-        navigate('/');
-      } else {
-        setError('Nom d\'utilisateur ou mot de passe incorrect');
-        setNotification({ message: 'Nom d\'utilisateur ou mot de passe incorrect', type: 'error' });
-      }
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      setToken(userCredential.user.accessToken);
+      localStorage.setItem('token', userCredential.user.accessToken);
+      setNotification({ message: 'Connexion réussie', type: 'success' });
+      navigate('/');
     } catch (error) {
-      setError('Erreur lors de la connexion');
-      setNotification({ message: 'Erreur lors de la connexion', type: 'error' });
+      setError('Email ou mot de passe incorrect');
+      setNotification({ message: 'Email ou mot de passe incorrect', type: 'error' });
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
-        type="text"
-        placeholder="Nom d'utilisateur"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         required
       />
       <input

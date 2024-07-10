@@ -1,73 +1,70 @@
 // src/components/SearchBar.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-function SearchBar({ setSearchQuery, setMinPrice, setMaxPrice, setBedrooms, setBathrooms }) {
-  const [advanced, setAdvanced] = useState(false);
+function SearchBar({ setSearchQuery, setMinPrice, setMaxPrice, setLocation, setMinSize, setMaxSize, setType }) {
   const [query, setQuery] = useState('');
+  const [minPrice, setMinPriceLocal] = useState('');
+  const [maxPrice, setMaxPriceLocal] = useState('');
+  const [location, setLocationLocal] = useState('');
+  const [minSize, setMinSizeLocal] = useState('');
+  const [maxSize, setMaxSizeLocal] = useState('');
+  const [type, setTypeLocal] = useState('');
 
-  useEffect(() => {
-    const delayDebounceFn = setTimeout(() => {
-      setSearchQuery(query);
-    }, 300);
-
-    return () => clearTimeout(delayDebounceFn);
-  }, [query, setSearchQuery]);
-
-  const handleMinPrice = (event) => {
-    setMinPrice(event.target.value);
-  };
-
-  const handleMaxPrice = (event) => {
-    setMaxPrice(event.target.value);
-  };
-
-  const handleBedrooms = (event) => {
-    setBedrooms(event.target.value);
-  };
-
-  const handleBathrooms = (event) => {
-    setBathrooms(event.target.value);
-  };
-
-  const toggleAdvanced = () => {
-    setAdvanced(!advanced);
+  const handleSearch = () => {
+    setSearchQuery(query);
+    setMinPrice(minPrice);
+    setMaxPrice(maxPrice);
+    setLocation(location);
+    setMinSize(minSize);
+    setMaxSize(maxSize);
+    setType(type);
   };
 
   return (
     <div>
       <input
         type="text"
-        placeholder="Rechercher..."
+        placeholder="Rechercher par titre"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button onClick={toggleAdvanced}>
-        {advanced ? 'Masquer la recherche avancée' : 'Recherche avancée'}
-      </button>
-      {advanced && (
-        <div>
-          <input
-            type="number"
-            placeholder="Prix minimum"
-            onChange={handleMinPrice}
-          />
-          <input
-            type="number"
-            placeholder="Prix maximum"
-            onChange={handleMaxPrice}
-          />
-          <input
-            type="number"
-            placeholder="Nombre de chambres"
-            onChange={handleBedrooms}
-          />
-          <input
-            type="number"
-            placeholder="Nombre de salles de bains"
-            onChange={handleBathrooms}
-          />
-        </div>
-      )}
+      <input
+        type="number"
+        placeholder="Prix minimum"
+        value={minPrice}
+        onChange={(e) => setMinPriceLocal(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Prix maximum"
+        value={maxPrice}
+        onChange={(e) => setMaxPriceLocal(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Localisation"
+        value={location}
+        onChange={(e) => setLocationLocal(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Taille minimum (m²)"
+        value={minSize}
+        onChange={(e) => setMinSizeLocal(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Taille maximum (m²)"
+        value={maxSize}
+        onChange={(e) => setMaxSizeLocal(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Type de propriété"
+        value={type}
+        onChange={(e) => setTypeLocal(e.target.value)}
+      />
+      <button onClick={handleSearch}>Rechercher</button>
     </div>
   );
 }

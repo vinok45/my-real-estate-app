@@ -1,33 +1,25 @@
 // src/components/Register.js
 import React, { useState } from 'react';
+import { auth } from '../firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
 function Register({ setNotification }) {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!username || !password) {
+    if (!email || !password) {
       setError('Veuillez remplir tous les champs');
       return;
     }
     try {
-      const response = await fetch('/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
-      });
-      const data = await response.json();
-      if (response.ok) {
-        setNotification({ message: 'Inscription réussie, veuillez vous connecter', type: 'success' });
-        navigate('/login');
-      } else {
-        setError(data.message || 'Erreur lors de l\'inscription');
-        setNotification({ message: data.message || 'Erreur lors de l\'inscription', type: 'error' });
-      }
+      await createUserWithEmailAndPassword(auth, email, password);
+      setNotification({ message: 'Inscription réussie, veuillez vous connecter', type: 'success' });
+      navigate('/login');
     } catch (error) {
       setError('Erreur lors de l\'inscription');
       setNotification({ message: 'Erreur lors de l\'inscription', type: 'error' });
@@ -37,10 +29,10 @@ function Register({ setNotification }) {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        type="text"
-        placeholder="Nom d'utilisateur"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         required
       />
       <input
@@ -57,3 +49,4 @@ function Register({ setNotification }) {
 }
 
 export default Register;
+
