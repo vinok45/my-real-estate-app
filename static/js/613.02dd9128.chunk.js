@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreal_estate_app=self.webpackChunkreal_estate_app||[]).push([[613],{613:(e,t,r)=>{r.r(t),r.d(t,{default:()=>n});r(43);var s=r(216),i=r(579);const n=function(e){let{properties:t}=e;const{id:r}=(0,s.g)(),n=t.find((e=>e.id===parseInt(r)));return n?(0,i.jsxs)("div",{children:[(0,i.jsx)("img",{src:n.photo,alt:n.title,width:"300"}),(0,i.jsx)("h2",{children:n.title}),(0,i.jsxs)("p",{children:["Prix: $",n.price]})]}):(0,i.jsx)("p",{children:"Propri\xe9t\xe9 non trouv\xe9e"})}}}]);
+//# sourceMappingURL=613.02dd9128.chunk.js.map
